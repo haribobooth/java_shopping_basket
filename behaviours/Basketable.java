@@ -9,4 +9,6 @@ public interface Basketable {
   public void empty();
   public ArrayList<Itemable> getItems();
   public double calculateTotal();
+  public void setFinalTotal(double newFinalTotal);
+  public double getFinalTotal();
 }

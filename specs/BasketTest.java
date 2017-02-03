@@ -58,4 +58,10 @@ public class BasketTest {
     assertEquals(10.00, basket.calculateTotal(), 0.01);
   }
 
+  @Test
+  public void canSetFinalTotal(){
+    basket.setFinalTotal(100.00);
+    assertEquals(100.00, basket.getFinalTotal(), 0.01);
+  }
+
 }

@@ -5,6 +5,7 @@ import behaviours.*;
 
 public class Basket implements Basketable {
   private ArrayList<Itemable> items;
+  private double finalTotal;
 
   public Basket(){
     items = new ArrayList<Itemable>();
@@ -36,6 +37,14 @@ public class Basket implements Basketable {
       total += item.getPrice();
     }
     return total;
+  }
+
+  public void setFinalTotal(double newFinalTotal){
+    this.finalTotal = newFinalTotal;
+  }
+
+  public double getFinalTotal(){
+    return finalTotal;
   }
 
 }
