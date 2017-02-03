@@ -6,7 +6,7 @@ import behaviours.*;
 
 public class ItemTest {
 
-  Basketable item;
+  Itemable item;
 
   @Before
   public void before(){

@@ -2,7 +2,7 @@ package models;
 
 import behaviours.*;
 
-public class Item implements Basketable {
+public class Item implements Itemable {
   private String name;
   private double price;
 
