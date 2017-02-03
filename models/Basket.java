@@ -13,4 +13,21 @@ public class Basket implements Basketable {
   public int itemCount(){
     return items.size();
   }
+
+  public void addItem(Itemable item){
+    items.add(item);
+  }
+
+  public void removeItem(Itemable item){
+    items.remove(item);
+  }
+
+  public void empty(){
+    items.clear();
+  }
+
+  public ArrayList<Itemable> getItems(){
+    return items;
+  }
+
 }
