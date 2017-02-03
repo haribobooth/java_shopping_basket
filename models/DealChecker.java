@@ -12,7 +12,7 @@ public class DealChecker implements Dealable {
   private boolean buyOneGetOneFree;
   private boolean tenPercentOffWhenTwentyPlusTotal;
   private boolean twoPercentOffWithLoyaltyCard;
-
+  
   public DealChecker(){
     itemsForBOGOF = new ArrayList<String>();
     itemsInBasket = new ArrayList<Itemable>();
