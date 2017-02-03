@@ -30,4 +30,12 @@ public class Basket implements Basketable {
     return items;
   }
 
+  public double calculateTotal(){
+    double total = 0.00;
+    for(Itemable item : items){
+      total += item.getPrice();
+    }
+    return total;
+  }
+
 }

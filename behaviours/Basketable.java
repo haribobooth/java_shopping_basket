@@ -8,4 +8,5 @@ public interface Basketable {
   public void removeItem(Itemable item);
   public void empty();
   public ArrayList<Itemable> getItems();
+  public double calculateTotal();
 }
