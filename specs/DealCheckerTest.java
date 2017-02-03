@@ -34,5 +34,20 @@ public class DealCheckerTest {
     assertEquals(21.98, basket.getFinalTotal(), 0.01);
   }
 
+  @Test
+  public void canPerform10PercentOff(){
+
+  }
+
+  @Test
+  public void canPerform2PercentOff(){
+
+  }
+
+  @Test
+  public void performsDealsInRightOrder(){
+    
+  }
+
 
 }
