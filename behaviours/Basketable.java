@@ -8,7 +8,9 @@ public interface Basketable {
   public void removeItem(Itemable item);
   public void empty();
   public ArrayList<Itemable> getItems();
-  public double calculateTotal();
+  public void calculateSubTotal();
+  public double getSubTotal();
   public void setFinalTotal(double newFinalTotal);
   public double getFinalTotal();
+  public void checkDeals(Dealable dealChecker);
 }
