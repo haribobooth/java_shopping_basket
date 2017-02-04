@@ -59,12 +59,36 @@ public class DealCheckerTest {
 
   @Test
   public void canPerform2PercentOff(){
+    dealChecker.setLoyaltyCard(true);
 
+    basket.addItem(itemBeer);
+    basket.addItem(itemWater);
+
+    basket.checkDeals(dealChecker);
+    assertEquals(12.72, basket.getFinalTotal(), 0.01);
   }
 
   @Test
   public void performsDealsInRightOrder(){
+    dealChecker.setBOGOF(true);
+    dealChecker.setTenPercentOff(true);
+    dealChecker.setLoyaltyCard(true);
 
+    dealChecker.addBOGOFItem("Beer");
+
+    basket.addItem(itemBeer);
+    basket.addItem(itemBeer);
+    basket.addItem(itemBeer);
+    basket.addItem(itemBeer);
+    basket.addItem(itemBeer);
+    basket.addItem(itemCrisps);
+    basket.addItem(itemCrisps);
+    basket.addItem(itemWater);
+    basket.addItem(itemWater);
+    basket.addItem(itemWater);
+
+    basket.checkDeals(dealChecker);
+    assertEquals(44.91, basket.getFinalTotal(), 0.01);
   }
 
 

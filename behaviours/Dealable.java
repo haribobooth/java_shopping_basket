@@ -7,4 +7,6 @@ public interface Dealable {
   public void setTenPercentOff(boolean tenPercentOff);
   public double buyOneGetOneFree(Basketable basket);
   public double tenPercentOff(Basketable basket);
+  public double twoPercentOffWithLoyaltyCard(Basketable basket);
+  public void setLoyaltyCard(boolean loyaltyCard);
 }
