@@ -12,7 +12,7 @@ public class DealChecker implements Dealable {
   private boolean buyOneGetOneFree;
   private boolean tenPercentOffWhenTwentyPlusTotal;
   private boolean twoPercentOffWithLoyaltyCard;
-  
+
   public DealChecker(){
     itemsForBOGOF = new ArrayList<String>();
     itemsInBasket = new ArrayList<Itemable>();
@@ -25,18 +25,28 @@ public class DealChecker implements Dealable {
     this.buyOneGetOneFree = buyOneGetOneFree;
   }
 
+  public void setTenPercentOff(boolean tenPercentOff){
+    this.tenPercentOffWhenTwentyPlusTotal = tenPercentOff;
+  }
+
   public void addBOGOFItem(String itemName){
     itemsForBOGOF.add(itemName);
   }
 
   public double checkForDeals(Basketable basket){
     if(buyOneGetOneFree){
-      basket.setFinalTotal(BuyOneGetOneFree(basket));
+      basket.setFinalTotal(buyOneGetOneFree(basket));
+    } else {
+      basket.calculateSubTotal();
+      basket.setFinalTotal(basket.getSubTotal());
+    }
+    if(tenPercentOffWhenTwentyPlusTotal){
+      basket.setFinalTotal(tenPercentOff(basket));
     }
     return basket.getFinalTotal();
   }
 
-  public double BuyOneGetOneFree(Basketable basket){
+  public double buyOneGetOneFree(Basketable basket){
     HashMap<String, Integer> itemQuantities = new HashMap<>();
     basket.calculateSubTotal();
     double finalTotal = basket.getSubTotal();
@@ -66,4 +76,13 @@ public class DealChecker implements Dealable {
 
     return finalTotal;
   }
+
+  public double tenPercentOff(Basketable basket){
+    double subTotal = basket.getFinalTotal();
+    if(subTotal >= 20){
+      basket.setFinalTotal(subTotal * 0.90);
+    }
+    return basket.getFinalTotal();
+  }
+
 }
