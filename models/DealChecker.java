@@ -53,7 +53,7 @@ public class DealChecker implements Dealable {
     return basket.getFinalTotal();
   }
 
-  public double buyOneGetOneFree(Basketable basket){
+  private double buyOneGetOneFree(Basketable basket){
     HashMap<String, Integer> itemQuantities = new HashMap<>();
     basket.calculateSubTotal();
     double finalTotal = basket.getSubTotal();
@@ -84,7 +84,7 @@ public class DealChecker implements Dealable {
     return finalTotal;
   }
 
-  public double tenPercentOff(Basketable basket){
+  private double tenPercentOff(Basketable basket){
     double subTotal = basket.getFinalTotal();
     if(subTotal >= 20){
       basket.setFinalTotal(subTotal * 0.90);
@@ -92,7 +92,7 @@ public class DealChecker implements Dealable {
     return basket.getFinalTotal();
   }
 
-  public double twoPercentOffWithLoyaltyCard(Basketable basket){
+  private double twoPercentOffWithLoyaltyCard(Basketable basket){
     double subTotal = basket.getFinalTotal();
     basket.setFinalTotal(subTotal * 0.98);
     return basket.getFinalTotal();
